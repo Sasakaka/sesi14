@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan JQuery 01</title>
+</head>
+<body>
+    <h3>Judul</h3>
+    <div id="pesan1">Isi ID Pesana 1</div>
+    <div class="pesan1">Isi Class Pesan 1</div>
+    <hr>
+    <h2>Judul: Mengatasi Stres dalam Kehidupan Sehari-hari: 7 Strategi Efektif</h2>
+    <div id="cnt1">Subjudul: Tips dan Trik untuk Menangani Stres dengan Bijak dan Sehat</div>
+    <div class="cnt1">Kehidupan modern seringkali penuh dengan tekanan dan stres yang bisa mempengaruhi kesejahteraan fisik dan mental kita. Stres dapat datang dari berbagai sumber, seperti pekerjaan, hubungan, keuangan, atau bahkan tuntutan sosial. Namun, dengan mempelajari strategi yang efektif untuk mengelola stres, kita dapat menciptakan kehidupan yang lebih seimbang dan bahagia. Dalam artikel ini, kami akan memberikan tujuh strategi efektif untuk membantu Anda mengatasi stres dalam kehidupan sehari-hari.</div>
+
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+        
+        //$(document).ready(function(){
+            
+
+        //});
+
+        $(function(){
+            $("h3").html("Isi judul di ganti");
+            $("#pesan1").html("pesan 1 id di ubah");
+            $(".pesan1").html("Mengubah isi dari class pesan1");
+
+            $("h2").html("Judul Artikel");
+            $("#cnt1").html("Subjudul Artikel");
+            $(".cnt1").html("Konten yang berisi pendahuluan artikel")
+        });
+    </script>
+</body>
+</html>

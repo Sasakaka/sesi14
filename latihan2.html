@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Latihan JQuery 02</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <style>
+        body{
+            height: 100hv;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .conteiner{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+        #hasil{
+            border-radius: 10px;
+            background-color: #eaeebb;
+            padding: 5px;
+            box-shadow: 1px 1px 3px rgb(0, 0, 0, .8);
+
+        }
+    </style>
+</head>
+<body>
+    <div class="conteiner">                                                                                    
+        <h3>Hitung Bangun Datar</h3>
+        <div class="mb-3">
+            <button type="button" class="btn btn-warning C1"> Persegi </button>
+            <button type="button" class="btn btn-warning C2"> Segitiga </button>
+          </div>
+        <div id="persegi">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Nilai Sisi 1</label>
+                <input type="number" class="PJ" id="panjang" placeholder="Masukan Sisi 1">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Nilai Sisi 2</label>
+                <input type="number" class="LB" id="lebar" placeholder="Masukan Sisi 2">
+              </div>
+              <div class="mb-3">
+                <button type="button" class="btn btn-warning hitungPersegi"> hasil </button>
+              </div>
+        </div>
+        <div id="segi3">
+            <div class="mb-3">
+                <label for="formGroupExampleInput" class="form-label">Nilai Alas</label>
+                <input type="number" class="alas from-control" id="alas" placeholder="Masukan Alas">
+              </div>
+              <div class="mb-3">
+                <label for="formGroupExampleInput2" class="form-label">Nilai Tinggi</label>
+                <input type="number" class="tinggi from-control" id="tinggi" placeholder="Masukan Tinggi">
+              </div>
+              <div class="mb-3">
+                <button type="button" class="btn btn-warning hitungSegi3"> Hasil </button>
+              </div>
+        </div>
+        <div id="hasil"></div>
+    </div>
+
+    <script src="jquery/jquery.min.js"></script>
+    <script>
+        $(function(){
+            $("#persegi").hide();
+            $("#segi3").hide();
+
+            $(".C1").click(function(){
+                $("h3").html("Hitung Luas Persegi");
+                $("#persegi").show(1000);
+                $("#segi3").hide(1000);
+                $("hasil").html("");
+            });
+            $(".C2").click(function(){
+                $("h3").html("Hitung Luas Segitiga");
+                $("#persegi").hide(1000);
+                $("#segi3").show(1000);
+                $("#hasil").html("");
+            });
+            $(".hitungPersegi").click(function(){
+                let P = $(".PJ").val();
+                let L = $(".LB").val();
+
+                let LU = P*L;
+
+                let tx = "Nilai dari Luas Persegi dengan Panjang = "+P;
+                tx += " dan lebar "+L+" adalah <br>";
+                tx += "Luas Panjang x Lebar <br>";
+                tx += "= "+P+" x "+L+"<br>";
+                tx += "= "+LU+" <br>Jadi, Luasnya adalah "+LU;
+                
+                $("#hasil").html(tx);
+            });
+            $(".hitungSegi3").click(function(){
+                let a = $(".alas").val();
+                let t = $(".tinggi").val();
+
+                let luas = (a * t) / 2;
+
+                let tx = "Nilai dari Luas Segitiga dengan Alas = "+a;
+                tx += "dan Tinggi = "+t+" adalah <br>";
+                tx += "Luas = (Alas x Tinggi) / 2 <br>";
+                tx += "= "+a+" x "+t+" / 2<br>";
+                tx += "= "+luas+" <br>Jadi, Luasnya adalah "+luas;
+
+                $("#hasil").html(tx);
+            });
+        });
+    </script>
+</body>
+</html>
